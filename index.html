@@ -485,6 +485,109 @@
     .tenets{grid-template-columns:1fr;}
     main{padding:0 16px 80px;}
   }
+  /* ---------- effectif & règlement ---------- */
+  .roster-table{
+    width:100%; border-collapse:collapse;
+    background:var(--bg-panel); border:1px solid var(--steel); border-radius:10px; overflow:hidden;
+  }
+  .roster-table th{
+    font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--cyan-dim); text-align:left; padding:12px 16px; border-bottom:1px solid var(--steel); background:var(--bg-panel-2);
+  }
+  .roster-table td{
+    padding:12px 16px; border-bottom:1px solid var(--steel-soft); font-size:15px; color:var(--text);
+  }
+  .roster-table tr:last-child td{border-bottom:none;}
+  .roster-table tr:hover td{background:rgba(95,227,255,.03);}
+  .roster-note{
+    margin-top:14px; font-size:13px; color:var(--text-dim); font-style:italic;
+  }
+  .rule-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:18px;}
+  .rule-card{
+    background:var(--bg-panel); border:1px solid var(--steel); border-radius:10px; padding:20px 22px;
+  }
+  .rule-card h4{
+    font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:1px; color:var(--cyan); margin-bottom:10px;
+  }
+  .rule-card ul{padding-left:18px; color:var(--text-dim); font-size:14.5px;}
+  .rule-card li{margin-bottom:6px;}
+  .rule-card li b{color:var(--text);}
+
+  /* ---------- construction state ---------- */
+  .construction{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:90px 24px; gap:22px;
+    border:1px solid var(--steel); border-radius:14px; background:var(--bg-panel);
+    position:relative; overflow:hidden;
+  }
+  .construction::before{
+    content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(135deg, rgba(227,171,70,.05) 0 14px, transparent 14px 28px);
+    pointer-events:none;
+  }
+  .construction-icon{
+    width:64px; height:64px; color:var(--amber); opacity:.9; position:relative; z-index:1;
+    animation:pulse-soft 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse-soft{0%,100%{opacity:.65;transform:scale(1);}50%{opacity:1;transform:scale(1.06);}}
+  .construction h3{
+    font-family:'Orbitron',sans-serif; font-size:20px; letter-spacing:2px; color:var(--text);
+    position:relative; z-index:1; text-transform:uppercase;
+  }
+  .construction p{
+    color:var(--text-dim); font-size:15px; max-width:440px; position:relative; z-index:1;
+  }
+  .construction .tag{
+    font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--amber); border:1px solid rgba(227,171,70,.4); border-radius:999px; padding:6px 16px;
+    position:relative; z-index:1; background:rgba(227,171,70,.06);
+  }
+
+  /* ---------- règlement ---------- */
+  .creed-intro{
+    border-left:2px solid var(--cyan-dim); padding:16px 22px; margin-bottom:36px;
+    background:rgba(95,227,255,.03); border-radius:0 8px 8px 0;
+  }
+  .creed-intro p{color:var(--text-dim); font-size:15px; font-style:italic;}
+  .article-list{display:flex; flex-direction:column; gap:14px; margin-bottom:40px;}
+  .article-card{
+    display:grid; grid-template-columns:64px 1fr; gap:20px;
+    background:var(--bg-panel); border:1px solid var(--steel); border-radius:10px;
+    padding:20px 24px; transition:border-color .2s;
+  }
+  .article-card:hover{border-color:var(--cyan-dim);}
+  .article-num{
+    font-family:'Orbitron',sans-serif; font-size:26px; font-weight:700; color:var(--cyan);
+    opacity:.85; line-height:1; display:flex; align-items:flex-start;
+  }
+  .article-body h4{
+    font-family:'Chakra Petch',sans-serif; font-size:15px; letter-spacing:1px; color:var(--text);
+    text-transform:uppercase; margin-bottom:8px;
+  }
+  .article-body p{color:var(--text-dim); font-size:15px; line-height:1.65;}
+  .article-card.epreuves .article-body ul{
+    margin-top:10px; padding-left:18px; color:var(--text-dim); font-size:14.5px;
+  }
+  .article-card.epreuves .article-body li{margin-bottom:5px;}
+  .article-card.epreuves .article-body li:nth-child(4){color:var(--amber);}
+  .article-card.epreuves .article-body li:nth-child(5){color:var(--danger);}
+  .oath-box{
+    border:1px solid var(--cyan-dim); border-radius:14px; padding:36px 40px;
+    background:linear-gradient(180deg, rgba(95,227,255,.05), rgba(95,227,255,.01));
+    text-align:center; position:relative;
+  }
+  .oath-box .article-num{justify-content:center; margin-bottom:6px;}
+  .oath-eyebrow{
+    font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--cyan-dim); margin-bottom:18px;
+  }
+  .oath-lines{max-width:560px; margin:0 auto; display:flex; flex-direction:column; gap:10px;}
+  .oath-lines p{
+    font-family:'Chakra Petch',sans-serif; font-size:16px; color:var(--text); line-height:1.7;
+  }
+  .oath-lines p:last-child{
+    margin-top:14px; color:var(--cyan); font-style:italic; font-size:15px;
+  }
 </style>
 </head>
 <body>
@@ -509,6 +612,8 @@
       <button class="nav-btn" data-page="formations" onclick="showPage('formations')">Les formations des formes de combat</button>
       <button class="nav-btn" data-page="documents" onclick="showPage('documents')">Document Sentinelle</button>
       <button class="nav-btn" data-page="pilotage" onclick="showPage('pilotage')">Pilotages et vaisseaux Sentinelle</button>
+      <button class="nav-btn" data-page="effectif" onclick="showPage('effectif')">Effectif</button>
+      <button class="nav-btn" data-page="reglement" onclick="showPage('reglement')">Réglement</button>
     </nav>
   </div>
 </header>
@@ -581,6 +686,18 @@
         <span class="num">PILIER 03</span>
         <h3>Pilotages et vaisseaux Sentinelle</h3>
         <p>La doctrine de vol et la flotte d'éclaireurs qui porte l'Ordre au-delà des frontières.</p>
+        <span class="arrow">&rarr;</span>
+      </div>
+      <div class="pillar" onclick="showPage('effectif')">
+        <span class="num">PILIER 04</span>
+        <h3>Effectif</h3>
+        <p>La hiérarchie de l'Ordre et la liste des Sentinelles en activité.</p>
+        <span class="arrow">&rarr;</span>
+      </div>
+      <div class="pillar" onclick="showPage('reglement')">
+        <span class="num">PILIER 05</span>
+        <h3>Réglement</h3>
+        <p>Les règles de conduite et de discipline qui encadrent la vie de l'Ordre.</p>
         <span class="arrow">&rarr;</span>
       </div>
     </div>
@@ -1028,7 +1145,7 @@
         <button class="ship-tab active" onclick="showShip('delta7')">Delta-7 </button>
         <button class="ship-tab" onclick="showShip('eta2')">Eta-2 Actis</button>
         <button class="ship-tab" onclick="showShip('tacpod')">RK-362 Tac-Pod</button>
-        <button class="ship-tab" onclick="showShip('ut60')">UT-60-D</button>
+        <button class="ship-tab" onclick="showShip('ut60')">UT-60</button>
       </div>
       <div class="ship-panels">
 
@@ -1139,7 +1256,7 @@
         <div class="ship-panel" id="ship-ut60">
           <div class="ship-panel-inner">
             <div>
-              <h3>UT-60-D</h3>
+              <h3>UT-60</h3>
               <span class="ship-class">Transport tactique léger &middot; Incom Corporation</span>
               <p class="ship-lore">Transport tactique polyvalent conçu par Incom Corporation pour assurer le déploiement rapide de personnel et le soutien des opérations militaires. Robuste et fiable, il permet d'embarquer une escouade complète tout en offrant une excellente mobilité en atmosphère comme dans l'espace. Capable d'effectuer des missions d'insertion, d'extraction, d'évacuation ou de ravitaillement, le UT-60 est particulièrement apprécié pour sa capacité à se poser rapidement en zone de combat et à repartir sous le feu ennemi.</p>
               <div class="armament-tags">
@@ -1179,6 +1296,125 @@
       <p>En cas d'infraction aux règles de vol, tout membre <b>Sentinelle ou 212th</b> est habilité à émettre un avertissement ou à retirer le permis de vol au pilote concerné.</p>
     </div>
 
+  </section>
+
+  <!-- ===================== EFFECTIF ===================== -->
+  <section class="page" id="effectif">
+    <div class="page-head">
+      <div class="eyebrow">Pilier 04 &middot; Organisation</div>
+      <h2 class="section-title">Effectif</h2>
+      <p class="lede">La hiérarchie de l'Ordre des Sentinelles et la liste des membres actuellement en activité.</p>
+    </div>
+
+    <div class="construction hud-frame">
+      <svg class="construction-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L21 7V12C21 16.97 17.16 21.5 12 23C6.84 21.5 3 16.97 3 12V7L12 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+        <path d="M9 12.5L11 14.5L15.5 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+        <line x1="12" y1="8.5" x2="12" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor"/>
+      </svg>
+      <span class="tag">En construction</span>
+      <h3>Registre en cours d'élaboration</h3>
+      <p>Le recensement des membres de l'Ordre est en cours de rédaction par le Gérant Sentinelle. Cette section sera mise à jour dès que la liste complète sera disponible.</p>
+    </div>
+  </section>
+
+  <!-- ===================== RÉGLEMENT ===================== -->
+  <section class="page" id="reglement">
+    <div class="page-head">
+      <div class="eyebrow">Pilier 05 &middot; Discipline</div>
+      <h2 class="section-title">Réglement Sentinelle</h2>
+      <p class="lede">Le code de conduite qui encadre la vie de l'Ordre, de la Voie au Serment.</p>
+    </div>
+
+    <div class="creed-intro">
+      <p>« Chaque Sentinelle, qu'elle soit Initiée ou Maître, marche sur le même chemin. Le rang accorde des responsabilités, jamais des privilèges. »</p>
+    </div>
+
+    <div class="article-list">
+      <div class="article-card">
+        <div class="article-num">I</div>
+        <div class="article-body">
+          <h4>La Voie</h4>
+          <p>Chaque Sentinelle, qu'elle soit Initiée ou Maître, marche sur le même chemin. Le rang accorde des responsabilités, jamais des privilèges.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">II</div>
+        <div class="article-body">
+          <h4>Le Respect</h4>
+          <p>Le respect est la première vertu. Chaque frère et chaque sœur d'armes mérite écoute, considération et dignité.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">III</div>
+        <div class="article-body">
+          <h4>La Discipline</h4>
+          <p>Une Sentinelle maîtrise d'abord son esprit avant de vouloir guider les autres. Les ordres sont suivis avec loyauté et les désaccords s'expriment avec calme et sagesse.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">IV</div>
+        <div class="article-body">
+          <h4>L'Honneur</h4>
+          <p>Le mensonge, la trahison, l'abus de pouvoir et la recherche de gloire personnelle sont contraires à la voie des Sentinelles.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">V</div>
+        <div class="article-body">
+          <h4>Le Service</h4>
+          <p>Une Sentinelle protège avant de dominer. Elle sert le groupe avant de servir ses propres intérêts.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">VI</div>
+        <div class="article-body">
+          <h4>La Maîtrise de soi</h4>
+          <p>Face à la colère, la Sentinelle choisit le calme. Face à la peur, elle choisit le courage. Face au doute, elle recherche la vérité.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">VII</div>
+        <div class="article-body">
+          <h4>La Fraternité</h4>
+          <p>Aucune Sentinelle n'est seule. Les plus expérimentés guident les Initiés, et les Initiés honorent l'enseignement de leurs Maîtres.</p>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-num">VIII</div>
+        <div class="article-body">
+          <h4>Le Secret</h4>
+          <p>Les enseignements, les décisions et les affaires de l'Ordre demeurent au sein de l'Ordre. La confiance est un lien sacré.</p>
+        </div>
+      </div>
+      <div class="article-card epreuves">
+        <div class="article-num">IX</div>
+        <div class="article-body">
+          <h4>Les Épreuves</h4>
+          <p>Chaque faute est une occasion d'apprendre. Toutefois, les actes portant atteinte à l'honneur de l'Ordre pourront entraîner :</p>
+          <ul>
+            <li>Un rappel à la voie.</li>
+            <li>Une mise à l'épreuve.</li>
+            <li>Une suspension.</li>
+            <li>Une rétrogradation.</li>
+            <li>L'exclusion définitive de l'Ordre.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="oath-box hud-frame">
+      <div class="article-num">X</div>
+      <div class="oath-eyebrow">Le Serment</div>
+      <div class="oath-lines">
+        <p>Je jure de défendre l'honneur des Sentinelles.</p>
+        <p>Je jure de servir avant de commander.</p>
+        <p>Je jure de faire preuve de courage sans céder à l'orgueil.</p>
+        <p>Je jure de rechercher la sagesse avant la puissance.</p>
+        <p>Tant que je porterai le nom de Sentinelle, je resterai fidèle à la Voie.</p>
+      </div>
+    </div>
   </section>
 
 </main>
