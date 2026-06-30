@@ -599,76 +599,207 @@
   <section class="page" id="formations">
     <div class="page-head">
       <div class="eyebrow">Pilier 01 &middot; Enseignement</div>
-      <h2 class="section-title">Les formations des formes de combat</h2>
-      <p class="lede">Sept formes, sept philosophies. Chaque Sentinelle progresse dans cet ordre, de la garde la plus instinctive jusqu'à la forme la plus exigeante, où la lame devient l'expression directe de l'esprit.</p>
+      <h2 class="section-title">Répertoire des formes de combat Jedi</h2>
+      <p class="lede">Le maniement de la lame progresse par paliers : chaque rang ouvre l'accès à de nouvelles formes, plus exigeantes que les précédentes. Sélectionnez un rang pour consulter les formes qui lui sont associées.</p>
     </div>
 
-    <div class="timeline">
-
-      <div class="form-item">
-        <div class="marker">I</div>
-        <div class="form-card">
-          <div class="head"><h3>Shii-Cho</h3><span class="tag">Forme de base</span></div>
-          <p>La première garde enseignée à tout novice : des mouvements amples, pensés pour désarmer plutôt que blesser. Elle pose les fondations de toutes les formes qui suivront.</p>
-          <div class="trait-row"><span class="trait">Désarmement</span><span class="trait">Posture large</span><span class="trait">Apprentissage</span></div>
-        </div>
+    <div class="ship-section">
+      <div class="ship-tabs">
+        <button class="ship-tab active" onclick="showForm('initie')">Sentinelle Initié</button>
+        <button class="ship-tab" onclick="showForm('avance')">Sentinelle Avancé</button>
+        <button class="ship-tab" onclick="showForm('maitresent')">Maître Sentinelle</button>
+        <button class="ship-tab" onclick="showForm('maitrearmes')">Maître d'armes</button>
       </div>
+      <div class="ship-panels">
 
-      <div class="form-item">
-        <div class="marker">II</div>
-        <div class="form-card">
-          <div class="head"><h3>Makashi</h3><span class="tag">Duel &amp; précision</span></div>
-          <p>L'art du duel à la lame, où chaque geste vise à contrôler l'arme adverse plutôt que la force brute. Une forme élégante, exigeante en finesse de poignet et en lecture de l'adversaire.</p>
-          <div class="trait-row"><span class="trait">Contrôle de lame</span><span class="trait">Élégance</span><span class="trait">Duel singulier</span></div>
+        <!-- SENTINELLE INITIÉ -->
+        <div class="ship-panel active" id="form-initie">
+          <div class="archive-view-head" style="margin-bottom:24px;">
+            <div><h3 style="font-size:18px;">Formes accessibles au rang Sentinelle Initié</h3></div>
+            <span class="access initie">Initié</span>
+          </div>
+          <div class="timeline">
+            <div class="form-item">
+              <div class="marker">1</div>
+              <div class="form-card">
+                <div class="head"><h3>Shii-Cho</h3><span class="tag">Forme I &middot; Forme de base</span></div>
+                <p>La plus ancienne forme de combat et la plus simple, aussi connue comme la Forme de détermination. C'est la première forme apprise par tout jeune novice, qui pose les bases de l'attaque, de la riposte, de la garde, de la parade et de l'esquive. Elle n'est ni défensive ni agressive, et reste considérée comme simpliste, peu utilisée par les représentants de l'Ordre.</p>
+                <div class="trait-row"><span class="trait">Apprentissage</span><span class="trait">Mouvements de base</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Kit Fisto</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">2</div>
+              <div class="form-card">
+                <div class="head"><h3>Defensive</h3><span class="tag">Forme défensive</span></div>
+                <p>Forme défensive qui permet de se morfondre derrière son adversaire, avec des mouvements plutôt lents. Une forme très peu apprise et peu appréciée par les chevaliers.</p>
+                <div class="trait-row"><span class="trait">Défense</span><span class="trait">Mouvements lents</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">3</div>
+              <div class="form-card">
+                <div class="head"><h3>Soresu Advanced</h3><span class="tag">Forme III &middot; Défensive</span></div>
+                <p>La Soresu est une forme principalement défensive, très utile pour contrer les tirs de blaster. Forme assez classique, rapidement apprise par les chevaliers, composée de mouvements brefs et rapides qui laissent un minimum de zone à découvert.</p>
+                <div class="trait-row"><span class="trait">Anti-blaster</span><span class="trait">Mouvements brefs</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Maître Obi-Wan Kenobi</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">4</div>
+              <div class="form-card">
+                <div class="head"><h3>Djem So</h3><span class="tag">Forme V &middot; Offensive</span></div>
+                <p>Forme assez agressive, portée sur l'attaque, qui répond au besoin grandissant de puissance des Jedi. Attention à ne pas perdre le contrôle avec la Djem So : elle peut vite devenir trop agressive.</p>
+                <div class="trait-row"><span class="trait">Offensive</span><span class="trait">Puissance</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Anakin Skywalker</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">5</div>
+              <div class="form-card">
+                <div class="head"><h3>Yong Li</h3><span class="tag">Forme de duel</span></div>
+                <p>Bonne forme de combat, apprise assez tôt par les chevaliers. Elle est puissante en duel, avec des mouvements rapides et forts, capable de briser la garde de l'adversaire rapidement si elle est bien maîtrisée.</p>
+                <div class="trait-row"><span class="trait">Duel</span><span class="trait">Brise-garde</span><span class="trait">Rapidité</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-item">
-        <div class="marker">III</div>
-        <div class="form-card">
-          <div class="head"><h3>Soresu</h3><span class="tag">Défense pure</span></div>
-          <p>La forme de la patience : économie de mouvement, endurance et résilience face à un ou plusieurs assaillants. C'est la discipline la plus souvent associée à l'esprit de la Sentinelle.</p>
-          <div class="trait-row"><span class="trait">Endurance</span><span class="trait">Économie de gestes</span><span class="trait">Multi-adversaires</span></div>
+        <!-- SENTINELLE AVANCÉ -->
+        <div class="ship-panel" id="form-avance">
+          <div class="archive-view-head" style="margin-bottom:24px;">
+            <div><h3 style="font-size:18px;">Formes accessibles au rang Sentinelle Avancé</h3></div>
+            <span class="access sentinelle">Sentinelle</span>
+          </div>
+          <div class="timeline">
+            <div class="form-item">
+              <div class="marker">1</div>
+              <div class="form-card">
+                <div class="head"><h3>Ataru Basic</h3><span class="tag">Forme IV &middot; Acrobatique</span></div>
+                <p>L'Ataru est une forme acrobatique qui exploite au maximum les aptitudes de l'utilisateur, notamment sa capacité à courir, sauter et tournoyer sur les trois axes. Un duelliste de la Forme IV apprend à repousser constamment les limites de son corps.</p>
+                <div class="trait-row"><span class="trait">Acrobatie</span><span class="trait">Mobilité 3 axes</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Maître Yoda, Ahsoka Tano</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">2</div>
+              <div class="form-card">
+                <div class="head"><h3>Agile / Agile Dual</h3><span class="tag">Forme au sol</span></div>
+                <p>Comme son nom l'indique, l'Agile demande de l'agilité, que ce soit pour tourner au sol ou pour glisser tout en donnant un coup de sabre. Ses mouvements sont surtout basés au sol. La variante Agile Dual est identique, mais peut être utilisée à deux sabres.</p>
+                <div class="trait-row"><span class="trait">Agilité</span><span class="trait">Mouvements au sol</span><span class="trait">Variante double sabre</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">3</div>
+              <div class="form-card">
+                <div class="head"><h3>Makashi</h3><span class="tag">Forme II &middot; Duel &amp; précision</span></div>
+                <p>La Forme II est une forme très artistique, dont les mouvements peuvent s'apparenter à de la danse ou à de l'escrime. Le sabre est principalement tenu à une main, et elle est utilisée par de très grands duellistes.</p>
+                <div class="trait-row"><span class="trait">Escrime</span><span class="trait">Une main</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Compte Dooku</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">4</div>
+              <div class="form-card">
+                <div class="head"><h3>Cresent</h3><span class="tag">Brise-garde</span></div>
+                <p>Coups lents et lourds, forme brise-garde et assez puissante. Elle est utilisée par les consulaires et recommandée avec une lance ou un bâton laser. Très bonne forme de combat, particulièrement forte en duel.</p>
+                <div class="trait-row"><span class="trait">Brise-garde</span><span class="trait">Coups lourds</span><span class="trait">Arme longue conseillée</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">5</div>
+              <div class="form-card">
+                <div class="head"><h3>Niman</h3><span class="tag">Forme VI &middot; Hybride</span></div>
+                <p>La Niman n'exige que peu d'efforts physiques, contrairement aux autres formes enseignées. Bonne forme en combat, elle permet aux Jedi de mieux se concentrer sur d'autres aspects de leur rôle : perception de la Force, suggestion, stratégie politique et négociation.</p>
+                <div class="trait-row"><span class="trait">Polyvalence</span><span class="trait">Diplomatie</span><span class="trait" style="border-color:var(--amber);color:var(--amber)">Utilisée par : Maître Ki-Adi-Mundi</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">6</div>
+              <div class="form-card">
+                <div class="head"><h3>Lus-Ma Dual</h3><span class="tag">Forme agressive</span></div>
+                <p>Coups rapides et puissants, semblables à la Djem So. Forme assez agressive et bonne en combat, utilisée par les consulaires mais maniable à deux sabres. La Lus-Ma n'est pas souvent vue, mais peut s'avérer utile en duel.</p>
+                <div class="trait-row"><span class="trait">Agressive</span><span class="trait">Double sabre</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">7</div>
+              <div class="form-card">
+                <div class="head"><h3>Jar'Kaï</h3><span class="tag">Forme X &middot; Imprévisible</span></div>
+                <p>Forme imprévisible utilisée par les Sentinelles, maniée à deux sabres. Coups lents mais imprévisibles, très forte en duel, mais peu maniable et difficile à maîtriser. Elle ressemble beaucoup à une Shii-Cho, mais améliorée avec des coups plus imprévisibles.</p>
+                <div class="trait-row"><span class="trait">Imprévisibilité</span><span class="trait">Double sabre</span><span class="trait">Forme signature Sentinelle</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">8</div>
+              <div class="form-card">
+                <div class="head"><h3>Dual Warrior</h3><span class="tag">Forme lourde</span></div>
+                <p>Forme lente mais puissante, très utile en duel. Maniement à deux sabres, rarement utilisée mais pouvant servir en combat 1 contre 1. Assez dure à maîtriser au début, à cause de coups peu maniables et lents ; une fois maîtrisée, elle devient très difficile à contrer.</p>
+                <div class="trait-row"><span class="trait">Puissance</span><span class="trait">Double sabre</span><span class="trait">Duel 1v1</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-item">
-        <div class="marker">IV</div>
-        <div class="form-card">
-          <div class="head"><h3>Ataru</h3><span class="tag">Vitesse &amp; agilité</span></div>
-          <p>Une forme acrobatique, rapide, qui exploite la mobilité et les déplacements aériens pour submerger l'adversaire avant qu'il ne s'organise.</p>
-          <div class="trait-row"><span class="trait">Acrobatie</span><span class="trait">Vitesse</span><span class="trait">Offensive directe</span></div>
+        <!-- MAÎTRE SENTINELLE -->
+        <div class="ship-panel" id="form-maitresent">
+          <div class="archive-view-head" style="margin-bottom:24px;">
+            <div><h3 style="font-size:18px;">Formes accessibles au rang Maître Sentinelle</h3></div>
+            <span class="access conseil">Conseil</span>
+          </div>
+          <div class="timeline">
+            <div class="form-item">
+              <div class="marker">1</div>
+              <div class="form-card">
+                <div class="head"><h3>Visigoth</h3><span class="tag">Forme des gardiens</span></div>
+                <p>Forme utilisée par les gardiens, aux mouvements tournoyants. Coups puissants et brise-garde, mais difficile à maîtriser. Facilement contrôlable si la forme est mal utilisée.</p>
+                <div class="trait-row"><span class="trait">Brise-garde</span><span class="trait">Mouvements tournoyants</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">2</div>
+              <div class="form-card">
+                <div class="head"><h3>Blade Dancer</h3><span class="tag">Forme acrobatique</span></div>
+                <p>Mouvements semblables à l'Agile, forme acrobatique utilisée par les gardiens. Quelques coups au sol et brise-garde. Très forte en combat si les coups sont maîtrisés ; elle a l'avantage de donner des coups au sol, rendant la riposte plus difficile pour l'adversaire.</p>
+                <div class="trait-row"><span class="trait">Acrobatie</span><span class="trait">Coups au sol</span><span class="trait">Brise-garde</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">3</div>
+              <div class="form-card">
+                <div class="head"><h3>Su-Ma Dual</h3><span class="tag">Forme acrobatique &amp; agressive</span></div>
+                <p>Forme très acrobatique, qui peut s'apparenter à une Butterfly et est très brise-garde. Elle contre facilement plusieurs formes mais reste vulnérable à d'autres. Forme très agressive, basée sur l'attaque et le recul, utilisée par les Sentinelles.</p>
+                <div class="trait-row"><span class="trait">Acrobatie</span><span class="trait">Brise-garde</span><span class="trait">Attaque/recul</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-item">
-        <div class="marker">V</div>
-        <div class="form-card">
-          <div class="head"><h3>Shien / Djem So</h3><span class="tag">Contre-attaque</span></div>
-          <p>La force de l'adversaire devient une ressource : cette forme privilégie la redirection des assauts et la riposte immédiate, pour les duellistes les plus robustes.</p>
-          <div class="trait-row"><span class="trait">Riposte</span><span class="trait">Force redirigée</span><span class="trait">Solidité</span></div>
+        <!-- MAÎTRE D'ARMES -->
+        <div class="ship-panel" id="form-maitrearmes">
+          <div class="archive-view-head" style="margin-bottom:24px;">
+            <div><h3 style="font-size:18px;">Formes accessibles au rang Maître d'armes</h3></div>
+            <span class="access maitre">Maître</span>
+          </div>
+          <div class="timeline">
+            <div class="form-item">
+              <div class="marker">1</div>
+              <div class="form-card">
+                <div class="head"><h3>Butterfly</h3><span class="tag">Forme ultime &middot; Acrobatique</span></div>
+                <p>Forme acrobatique et rapide utilisée par les Maîtres Sentinelle, très forte et très brise-garde. Elle est très difficile à contrer car elle donne des coups dans tous les axes en même temps : il faut être agile pour l'utiliser, et si elle est mal maîtrisée, elle peut être dévastatrice.</p>
+                <div class="trait-row"><span class="trait">Multi-axes</span><span class="trait">Brise-garde</span><span class="trait">Haut risque</span></div>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="marker">2</div>
+              <div class="form-card">
+                <div class="head"><h3>Ataru Advanced</h3><span class="tag">Forme IV &middot; Avancée</span></div>
+                <p>Identique à l'Ataru normale, sauf qu'elle frappe beaucoup plus vite, permettant ainsi de meilleurs combos.</p>
+                <div class="trait-row"><span class="trait">Vitesse accrue</span><span class="trait">Combos</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-item">
-        <div class="marker">VI</div>
-        <div class="form-card">
-          <div class="head"><h3>Niman</h3><span class="tag">Forme hybride</span></div>
-          <p>Un équilibre délibéré entre les formes précédentes, complété par une attention portée à la diplomatie. Souvent choisie par les Sentinelles appelées à négocier autant qu'à protéger.</p>
-          <div class="trait-row"><span class="trait">Polyvalence</span><span class="trait">Diplomatie</span><span class="trait">Adaptabilité</span></div>
-        </div>
       </div>
-
-      <div class="form-item">
-        <div class="marker">VII</div>
-        <div class="form-card">
-          <div class="head"><h3>Juyo / Vaapad</h3><span class="tag">Intensité &amp; risque</span></div>
-          <p>La forme la plus instable et la plus puissante : elle canalise des émotions intenses dans la lame. Réservée à ceux qui ont appris à ne jamais se laisser submerger par ce qu'ils canalisent.</p>
-          <div class="trait-row"><span class="trait">Canalisation</span><span class="trait">Imprévisibilité</span><span class="trait">Maîtrise de soi</span></div>
-        </div>
-      </div>
-
     </div>
+
+    <p style="text-align:right; color:var(--text-dim); font-family:'Chakra Petch',sans-serif; font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; margin-top:30px;">Réalisé par : Maître Kayuto</p>
   </section>
 
   <!-- ===================== DOCUMENTS ===================== -->
@@ -1168,9 +1299,18 @@
 
 <script>
   function showShip(id){
-    document.querySelectorAll('.ship-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('ship-'+id).classList.add('active');
-    document.querySelectorAll('.ship-tab').forEach(b => b.classList.remove('active'));
+    const wrap = event.currentTarget.closest('.ship-section');
+    wrap.querySelectorAll('.ship-panel').forEach(p => p.classList.remove('active'));
+    wrap.querySelector('#ship-'+id).classList.add('active');
+    wrap.querySelectorAll('.ship-tab').forEach(b => b.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  function showForm(id){
+    const wrap = event.currentTarget.closest('.ship-section');
+    wrap.querySelectorAll('.ship-panel').forEach(p => p.classList.remove('active'));
+    wrap.querySelector('#form-'+id).classList.add('active');
+    wrap.querySelectorAll('.ship-tab').forEach(b => b.classList.remove('active'));
     event.currentTarget.classList.add('active');
   }
 
