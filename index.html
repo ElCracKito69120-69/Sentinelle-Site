@@ -543,101 +543,18 @@
     position:relative; z-index:1; background:rgba(227,171,70,.06);
   }
 
-  /* ---------- effectif (nouvelle mise en page) ---------- */
-  .effectif-lead{
-    display:grid; grid-template-columns:1.3fr .7fr; gap:24px; margin-bottom:44px; align-items:stretch;
-  }
-  .effectif-gerant{
-    background:linear-gradient(160deg, var(--bg-panel), var(--bg-panel-2));
-    border:1px solid var(--cyan-dim); border-radius:12px; padding:28px 30px;
-    display:flex; align-items:center; gap:22px; position:relative; overflow:hidden;
-  }
-  .effectif-gerant::before{
-    content:""; position:absolute; top:0; left:0; right:0; height:2px;
-    background:linear-gradient(90deg, var(--cyan), transparent);
-  }
-  .effectif-gerant .eg-icon{
-    width:64px; height:64px; border-radius:50%; flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--cyan-dim); background:rgba(95,227,255,.06); color:var(--cyan);
-  }
-  .effectif-gerant .eg-icon svg{width:30px; height:30px;}
-  .effectif-gerant .eg-role{
-    font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
-    color:var(--cyan-dim); margin-bottom:6px;
-  }
-  .effectif-gerant h3{font-size:22px; color:var(--text); margin-bottom:4px;}
-  .effectif-gerant p{font-size:13.5px; color:var(--text-dim);}
-
-  .effectif-summary{
-    background:var(--bg-panel); border:1px solid var(--steel-soft); border-radius:12px; padding:24px 26px;
-    display:flex; flex-direction:column; justify-content:center; gap:12px;
-  }
-  .effectif-summary .es-num{font-family:'Orbitron',sans-serif; font-size:34px; color:var(--cyan); line-height:1;}
-  .effectif-summary .es-label{font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim);}
-
-  .effectif-hierarchy{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:48px;
-  }
-  .eh-card{
-    background:var(--bg-panel); border:1px solid var(--steel-soft); border-top:3px solid var(--cyan-dim);
-    border-radius:8px; padding:22px 20px; transition:transform .25s, border-color .25s, box-shadow .25s;
-    position:relative;
-  }
-  .eh-card:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(0,0,0,.3);}
-  .eh-card.eh-avance{border-top-color:var(--amber);}
-  .eh-card.eh-maitre{border-top-color:#a55454;}
-  .eh-card.eh-armes{border-top-color:var(--lavender);}
-  .eh-card .eh-icon{
-    width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--steel); background:var(--bg-panel-2); color:var(--cyan); margin-bottom:16px;
-  }
-  .eh-card.eh-avance .eh-icon{color:var(--amber); border-color:rgba(227,171,70,.4);}
-  .eh-card.eh-maitre .eh-icon{color:#e08a8a; border-color:rgba(165,84,84,.5);}
-  .eh-card.eh-armes .eh-icon{color:var(--lavender); border-color:rgba(185,168,232,.4);}
-  .eh-card .eh-icon svg{width:19px; height:19px;}
-  .eh-card .eh-grade{
-    font-family:'Chakra Petch',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase;
-    color:var(--cyan-dim); margin-bottom:6px;
-  }
-  .eh-card.eh-avance .eh-grade{color:var(--amber);}
-  .eh-card.eh-maitre .eh-grade{color:#e08a8a;}
-  .eh-card.eh-armes .eh-grade{color:var(--lavender);}
-  .eh-card h4{font-family:'Orbitron',sans-serif; font-size:14.5px; color:var(--text); margin-bottom:8px; line-height:1.3;}
-  .eh-card p{font-size:13px; color:var(--text-dim); line-height:1.5;}
-  .eh-card .eh-count{
-    margin-top:16px; padding-top:14px; border-top:1px solid var(--steel-soft);
-    font-family:'Orbitron',sans-serif; font-size:20px; color:var(--text); display:flex; align-items:baseline; gap:6px;
-  }
-  .eh-card .eh-count span{font-family:'Chakra Petch',sans-serif; font-size:10.5px; letter-spacing:1px; text-transform:uppercase; color:var(--text-dim); font-weight:400;}
-
-  .effectif-registry{
-    border:1px solid var(--steel-soft); border-radius:12px; background:var(--bg-panel);
-    padding:30px 34px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  /* ---------- effectif: carte propre (sans motif "chantier") ---------- */
+  .effectif-card{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:70px 24px; gap:20px;
+    border:1px solid var(--steel); border-radius:14px; background:var(--bg-panel);
     position:relative; overflow:hidden;
   }
-  .effectif-registry::before{
-    content:''; position:absolute; inset:0;
-    background:repeating-linear-gradient(135deg, rgba(95,227,255,.03) 0 14px, transparent 14px 28px);
-    pointer-events:none;
+  .effectif-card .ef-icon{width:52px; height:52px; color:var(--cyan); opacity:.9;}
+  .effectif-card h3{
+    font-family:'Orbitron',sans-serif; font-size:20px; letter-spacing:2px; color:var(--text); text-transform:uppercase;
   }
-  .effectif-registry .er-text{position:relative; z-index:1; max-width:560px;}
-  .effectif-registry .er-eyebrow{
-    font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
-    color:var(--cyan-dim); display:flex; align-items:center; gap:8px; margin-bottom:10px;
-  }
-  .effectif-registry .er-eyebrow .dot{width:6px;height:6px;border-radius:50%; background:var(--cyan); box-shadow:0 0 6px var(--cyan); animation:pulse 2s ease-in-out infinite;}
-  .effectif-registry h3{font-size:19px; color:var(--text); margin-bottom:8px;}
-  .effectif-registry p{font-size:14px; color:var(--text-dim); line-height:1.6;}
-  .effectif-registry .btn{position:relative; z-index:1; white-space:nowrap;}
-
-  @media (max-width:880px){
-    .effectif-hierarchy{grid-template-columns:1fr 1fr;}
-    .effectif-registry{flex-direction:column; align-items:flex-start;}
-  }
-  @media (max-width:520px){
-    .effectif-hierarchy{grid-template-columns:1fr;}
-  }
+  .effectif-card p{color:var(--text-dim); font-size:15px; max-width:460px;}
 
   /* ---------- règlement ---------- */
   .creed-intro{
@@ -844,6 +761,35 @@
   @media (max-width:880px){
     .formations-toolbar{position:static;}
   }
+
+  /* ---------- modale générique ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100; display:none;
+    align-items:center; justify-content:center; padding:24px;
+    background:rgba(3,6,11,.72); backdrop-filter:blur(4px);
+  }
+  .modal-overlay.show{display:flex; animation:fadeIn .25s ease;}
+  .modal-box{
+    width:100%; max-width:480px; background:var(--bg-panel); border:1px solid var(--cyan-dim);
+    border-radius:12px; padding:34px 34px 28px; position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(95,227,255,.08);
+  }
+  .modal-close{
+    position:absolute; top:16px; right:16px; width:30px; height:30px; border-radius:50%;
+    border:1px solid var(--steel); background:transparent; color:var(--text-dim); cursor:pointer;
+    display:flex; align-items:center; justify-content:center; transition:all .2s;
+  }
+  .modal-close:hover{border-color:var(--cyan-dim); color:var(--cyan);}
+  .modal-icon{
+    width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--danger); color:#e08a8a; background:rgba(212,88,79,.08); margin-bottom:18px;
+  }
+  .modal-box h3{
+    font-family:'Orbitron',sans-serif; font-size:19px; letter-spacing:1.5px; color:var(--text); margin-bottom:14px;
+  }
+  .modal-box p{color:var(--text-dim); font-size:15px; line-height:1.7; margin-bottom:10px;}
+  .modal-box p b{color:#e08a8a;}
+  .modal-actions{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
 </style>
 </head>
 <body>
@@ -870,6 +816,7 @@
       <button class="nav-btn" data-page="pilotage" onclick="showPage('pilotage')">Pilotages et vaisseaux Sentinelle</button>
       <button class="nav-btn" data-page="effectif" onclick="showPage('effectif')">Effectif</button>
       <button class="nav-btn" data-page="reglement" onclick="showPage('reglement')">Réglement</button>
+      <button class="nav-btn" onclick="openModal('permis')">Permis Vaisseau</button>
     </nav>
   </div>
 </header>
@@ -1461,8 +1408,8 @@
           <div class="archive-view-head"><div><h3>Évolution dans la spécialité</h3><span class="meta">Réf. EVO-08 &middot; Accès Conseil</span></div><span class="access conseil">Conseil</span></div>
           <div class="doc-body">
             <div class="grade-step">
-              <h4>Sentinelle Initié </h4>
-              <p>Grade d'arrivée dans les Sentinelles : vous devez apprendre à former d'autres Jedi au pilotage, et acquérir vos nouveaux pouvoirs et formes de combat. Pour passer au grade supérieur, il faut maîtriser au minimum : <b>Toute les Formes de combats et Pouvoir de forces Sentinelle Initié</b>.</p>
+              <h4>Sentinelle débutant</h4>
+              <p>Grade d'arrivée dans les Sentinelles : vous devez apprendre à former d'autres Jedi au pilotage, et acquérir vos nouveaux pouvoirs et formes de combat. Pour passer au grade supérieur, il faut maîtriser au minimum : <b>Sense II, Replenish, Adrénaline</b> et <b>Breach</b>.</p>
             </div>
             <div class="grade-step">
               <h4>Sentinelle avancé</h4>
@@ -1594,7 +1541,7 @@
         <button class="ship-tab active" onclick="showShip('delta7')">Delta-7 </button>
         <button class="ship-tab" onclick="showShip('eta2')">Eta-2 Actis</button>
         <button class="ship-tab" onclick="showShip('tacpod')">RK-362 Tac-Pod</button>
-        <button class="ship-tab" onclick="showShip('ut60')">UT-60-D</button>
+        <button class="ship-tab" onclick="showShip('ut60')">UT-60</button>
       </div>
       <div class="ship-panels">
 
@@ -1666,12 +1613,46 @@
           </div>
         </div>
 
-        
+        <!-- TAC-POD -->
+        <div class="ship-panel" id="ship-tacpod">
+          <div class="ship-panel-inner">
+            <div>
+              <h3>TacPod</h3>
+              <span class="ship-class">Transporteur &middot; Consolidated Holdings of Preox-Morlana</span>
+              <p class="ship-lore">Transport de troupes rapide et maniable, blindé légèrement pour rester le moins lourd possible. Pouvant emporter jusqu'à 6 personnes à son bord, il est parfait pour arriver ou quitter une zone dangereuse. Seul appareil de la flotte capable de faire du <b style="color:var(--cyan)">vol stationnaire</b>.</p>
+              <div class="armament-tags">
+                <span class="arm-tag hi">Canon sur boule</span>
+                <span class="arm-tag hi">Tourelle laser</span>
+                <span class="arm-tag hi">2 Canons fixes</span>
+                <span class="arm-tag">Blindage léger</span>
+                <span class="arm-tag">Équipement de survie</span>
+              </div>
+            </div>
+            <div>
+              <div class="ship-specs">
+                <div class="ship-specs-head">Caractéristiques</div>
+                <div class="spec-row"><span class="sk">Vitesse max</span><span class="sv hi">200 km/h</span></div>
+                <div class="spec-row"><span class="sk">Équipage</span><span class="sv">1 pilote + 1 copilote</span></div>
+                <div class="spec-row"><span class="sk">Passagers</span><span class="sv">4 passagers</span></div>
+                <div class="spec-row"><span class="sk">Longueur</span><span class="sv">800 cm</span></div>
+                <div class="spec-row"><span class="sk">Largeur</span><span class="sv">1 200 cm</span></div>
+                <div class="spec-row"><span class="sk">Hauteur</span><span class="sv">400 cm</span></div>
+                <div class="spec-row"><span class="sk">Prix neuf</span><span class="sv">350 000 crédits</span></div>
+              </div>
+              <div class="ship-gauges">
+                <div class="gauge"><div class="lbl"><span>Vitesse</span><span>13%</span></div><div class="bar"><div class="fill" style="width:13%"></div></div></div>
+                <div class="gauge"><div class="lbl"><span>Capacité</span><span>90%</span></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                <div class="gauge"><div class="lbl"><span>Armement</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- UT-60 -->
         <div class="ship-panel" id="ship-ut60">
           <div class="ship-panel-inner">
             <div>
-              <h3>UT-60-D</h3>
+              <h3>UT-60</h3>
               <span class="ship-class">Transport tactique léger &middot; Incom Corporation</span>
               <p class="ship-lore">Transport tactique polyvalent conçu par Incom Corporation pour assurer le déploiement rapide de personnel et le soutien des opérations militaires. Robuste et fiable, il permet d'embarquer une escouade complète tout en offrant une excellente mobilité en atmosphère comme dans l'espace. Capable d'effectuer des missions d'insertion, d'extraction, d'évacuation ou de ravitaillement, le UT-60 est particulièrement apprécié pour sa capacité à se poser rapidement en zone de combat et à repartir sous le feu ennemi.</p>
               <div class="armament-tags">
@@ -1717,64 +1698,20 @@
   <section class="page" id="effectif">
     <div class="page-head">
       <div class="eyebrow">Pilier 04 &middot; Organisation</div>
-      <h2 class="section-title">Effectif Sentinelle</h2>
+      <h2 class="section-title">Effectif</h2>
       <p class="lede">La hiérarchie de l'Ordre des Sentinelles et la liste des membres actuellement en activité.</p>
     </div>
 
-    <!-- GERANT -->
-    <div class="effectif-gerant hud-frame" style="margin-bottom:44px;">
-      <div class="eg-icon">
-        <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L9.8 5.2H14L10.6 7.9L11.8 12L8 9.4L4.2 12L5.4 7.9L2 5.2H6.2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
-      </div>
-      <div>
-        <div class="eg-role">Gérant Sentinelle</div>
-        <h3>Kayuto</h3>
-        <p>À la tête de l'Ordre, garant de la Voie et responsable du registre des Sentinelles.</p>
-      </div>
-    </div>
-
-    <!-- HIERARCHIE -->
-    <div class="eyebrow" style="margin-bottom:20px;">Hiérarchie de l'Ordre</div>
-    <div class="effectif-hierarchy">
-      <div class="eh-card">
-        <div class="eh-icon">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 2L9.8 6H14L10.6 8.8L11.8 13L8 10.4L4.2 13L5.4 8.8L2 6H6.2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
-        </div>
-        <div class="eh-grade">Grade 01</div>
-        <h4>Sentinelle Initié</h4>
-        <p>Premier grade de l'Ordre. Apprentissage des formes de base et des pouvoirs fondamentaux.</p>
-        <div class="eh-count">— <span>membres</span></div>
-      </div>
-      <div class="eh-card eh-avance">
-        <div class="eh-icon">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5L14 4V8C14 11.5 11.3 14 8 14.8C4.7 14 2 11.5 2 8V4L8 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
-        </div>
-        <div class="eh-grade">Grade 02</div>
-        <h4>Sentinelle Avancé</h4>
-        <p>Formes plus exigeantes et pouvoirs avancés. Accès aux formes acrobatiques et artistiques.</p>
-        <div class="eh-count">— <span>membres</span></div>
-      </div>
-      <div class="eh-card eh-maitre">
-        <div class="eh-icon">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L9.5 5.2H14L10.5 7.8L11.8 12L8 9.4L4.2 12L5.5 7.8L2 5.2H6.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
-        </div>
-        <div class="eh-grade">Grade 03</div>
-        <h4>Maître Sentinelle</h4>
-        <p>Peut faire passer les tests de grade et former les Chevaliers Accomplis à la spécialité.</p>
-        <div class="eh-count">— <span>membres</span></div>
-      </div>
-    </div>
-
-    <!-- REGISTRE COMPLET -->
-    <div class="effectif-registry hud-frame">
-      <div class="er-text">
-        <div class="er-eyebrow"><span class="dot"></span>Registre nominatif</div>
-        <h3>Liste complète des membres</h3>
-        <p>Le détail nominatif de chaque Sentinelle (nom, grade, date d'entrée dans l'Ordre) est tenu à jour dans le registre officiel, maintenu par le Gérant Sentinelle.</p>
-      </div>
-      <a class="btn" href="https://docs.google.com/spreadsheets/d/1zoErx8aaZNeonfYA42O1yevtMA7N8rCkzHb6JN9cx_Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px;">
+    <div class="construction hud-frame">
+      <svg class="construction-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L21 7V12C21 16.97 17.16 21.5 12 23C6.84 21.5 3 16.97 3 12V7L12 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+        <path d="M9 12.5L11 14.5L15.5 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Effectif Sentinelle</h3>
+      <p>Retrouve la hiérarchie de l'Ordre et la liste des membres actuellement en activité dans le registre tenu à jour par le Gérant Sentinelle.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1zoErx8aaZNeonfYA42O1yevtMA7N8rCkzHb6JN9cx_Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="margin-top:6px; display:inline-flex; align-items:center; gap:8px;">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="1.5" width="12" height="13" rx="1.5" stroke="currentColor" stroke-width="1.2"/><line x1="4.5" y1="5" x2="11.5" y2="5" stroke="currentColor" stroke-width="1.1"/><line x1="4.5" y1="7.7" x2="11.5" y2="7.7" stroke="currentColor" stroke-width="1.1"/><line x1="4.5" y1="10.4" x2="8.5" y2="10.4" stroke="currentColor" stroke-width="1.1"/></svg>
-        Ouvrir le registre &rarr;
+        Consulter le registre (Google Sheets) &rarr;
       </a>
     </div>
   </section>
@@ -1883,6 +1820,24 @@
   SENTINELLE JEDI &middot; ORDRE DES SENTINELLES &middot; GÉRANT : Kayuto
 </footer>
 
+<div class="modal-overlay" id="modal-permis" onclick="if(event.target===this) closeModal('permis')">
+  <div class="modal-box hud-frame">
+    <button class="modal-close" onclick="closeModal('permis')" aria-label="Fermer">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="2" x2="12" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="12" y1="2" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L20 19H2L11 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/><line x1="11" y1="9" x2="11" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="16" r=".8" fill="currentColor"/></svg>
+    </div>
+    <h3>Permis de vaisseau</h3>
+    <p>Toute Sentinelle est tenue de remplir le formulaire de permis de vaisseau pour être autorisée à piloter au sein de l'Ordre.</p>
+    <p><b>Le non-respect de cette obligation expose à une sanction.</b></p>
+    <div class="modal-actions">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfNIA3FHYvCqBXJ-1aXwBzgKwU2WHOWTjMw_XNM8-a0vbFP4w/viewform?usp=sharing&ouid=117575006871830572830" target="_blank" rel="noopener noreferrer">Remplir le formulaire &rarr;</a>
+      <button class="btn ghost" onclick="closeModal('permis')">Fermer</button>
+    </div>
+  </div>
+</div>
+
 <script>
   function filterForms(target, btn){
     const search = document.getElementById('formSearch');
@@ -1983,6 +1938,22 @@
     document.querySelector('.nav-btn[data-page="'+id+'"]').classList.add('active');
     window.scrollTo({top:0, behavior:'smooth'});
   }
+
+  function openModal(id){
+    const modal = document.getElementById('modal-'+id);
+    if(modal) modal.classList.add('show');
+  }
+
+  function closeModal(id){
+    const modal = document.getElementById('modal-'+id);
+    if(modal) modal.classList.remove('show');
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal-overlay.show').forEach(m => m.classList.remove('show'));
+    }
+  });
 
   // starfield generation
   (function(){
